@@ -12,7 +12,7 @@ Each correct guess is written on the map at its correct coordinates. 🇺🇸
 - The program will ask you to **guess the name of a state**.  
 - If your guess is correct, the name appears on the map at its proper location (based on x/y coordinates).  
 - The game keeps track of how many states you’ve guessed correctly.  
-- When you finish (or type "Exit"), a file will be created showing the **states you missed**.
+- When you finish by typing "Exit", 2 files will be created showing the **states you missed** & **states you have guessed**.
 
 ---
 
@@ -22,7 +22,7 @@ Each correct guess is written on the map at its correct coordinates. 🇺🇸
 - 🧠 Educational — learn U.S. geography while playing  
 - 🧮 Uses **Pandas** for CSV data handling (state names + coordinates)  
 - 🐢 Uses **Turtle Graphics** for drawing text on the map  
-- 📜 Saves unguessed states to a CSV file for review  
+- 📜 Saves guessed & unguessed states to a CSV files for review  
 
 ---
 
