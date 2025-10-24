@@ -15,7 +15,7 @@ states_length = len(states_list)
 correct_guessed_list = []
 x_axis_list = []
 y_axis_list = []
-missing_states = []
+
 
 
 
@@ -35,9 +35,7 @@ while game_is_on:
         guessed_states_file.to_csv("us_states_game/guessed_states_file.csv")
         
         # creating a csv file to save the states that user have not guessed.
-        for state in states_list:
-            if state not in correct_guessed_list:
-                missing_states.append(state)
+        missing_states = [state for state in states_list if state not in correct_guessed_list]  #updated to use list comprehension.
         unguessed_states = {
             "missed_state" : missing_states
         }
