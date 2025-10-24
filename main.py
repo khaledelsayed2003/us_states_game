@@ -1,5 +1,6 @@
 import turtle
 import pandas as pd
+from state import State
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
@@ -34,6 +35,7 @@ while game_is_on:
         guessed_states_file = pd.DataFrame(guessed_states)
         guessed_states_file.to_csv("us_states_game/guessed_states_file.csv")
         
+        
         # creating a csv file to save the states that user have not guessed.
         missing_states = [state for state in states_list if state not in correct_guessed_list]  #updated to use list comprehension.
         unguessed_states = {
@@ -49,11 +51,7 @@ while game_is_on:
         guess_coor_row = all_data[all_data.state == user_guess]
         x_coor = float(guess_coor_row.x) # we have to convert the coor because the value in csv files are always str.
         y_coor = float(guess_coor_row.y)
-        new_state = turtle.Turtle()
-        new_state.penup()
-        new_state.hideturtle()
-        new_state.goto(x_coor, y_coor)
-        new_state.write(user_guess)
+        new_state = State(x_coor, y_coor, user_guess)
         num_of_correct_guesses += 1
         correct_guessed_list.append(user_guess)
         x_axis_list.append(x_coor)
